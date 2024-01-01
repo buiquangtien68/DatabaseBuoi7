@@ -13,9 +13,13 @@ public class RoleService {
     private RoleRepository roleReponsitory;
 
     public void findRoleByName(String name){
-        List<Role> roleListByName = roleReponsitory.findRoleByName(name);
-        if (roleListByName.isEmpty())
+        Role role = roleReponsitory.findRoleByName(name);
+        if (role==null)
             System.out.println("không có dữ liệu");
-        else System.out.println(roleListByName);
+        else System.out.println(role);
+    }
+
+    public void insertRole(String name){
+        roleReponsitory.insertRole(name);
     }
 }
